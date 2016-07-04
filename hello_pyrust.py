@@ -4,9 +4,11 @@ from cffi import FFI
 
 
 ffi = FFI()
-ffi.cdef("""
-    int hello(const char *who);
-""");
+ffi.cdef(open(os.path.join(
+    # FIXME: path is hard-coded
+    os.path.dirname(__file__), 'rust', 'src',
+    'hello_pyrust.h',
+)).read());
 
 if sys.platform == 'win32':
     DYNAMIC_LIB_FORMAT = '%s.dll'
