@@ -12,6 +12,7 @@ that exports symbols with a C-compatible ABI and that CFFI can use with `dlopen(
 
 As-is, to build and run this demo:
 
+* Get Rust (the easiest is probably to use [rustup]) and Python
 * (Optional) Create a virtualenv and activate it.
 * Run `pip install -e .` to install the [CFFI] dependency.
 * Run `cargo build --manifest-path ./rust/Cargo.toml` to build Rust code and create a dynamic library.
@@ -19,6 +20,7 @@ As-is, to build and run this demo:
   to load (`dlopen()`) and call this library.
   This should print `Hello Python from Rust!` and not raise any exception.
 
+[rustup]: https://www.rustup.rs/
 [CFFI]: https://cffi.readthedocs.io/en/latest/overview.html
 
 
